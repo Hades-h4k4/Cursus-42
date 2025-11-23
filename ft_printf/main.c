@@ -6,7 +6,7 @@
 /*   By: carltruj <carltruj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/23 18:34:05 by carltruj          #+#    #+#             */
-/*   Updated: 2025/11/23 18:45:27 by carltruj         ###   ########.fr       */
+/*   Updated: 2025/11/23 19:16:32 by carltruj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 int main()
 {
-	ft_printf("HOlA %c %c %c%c%c", 'A', 'B', 'c',' ','d');
+	ft_printf("HOlA %c %s", 'A', "string");
 	return (0);
 }

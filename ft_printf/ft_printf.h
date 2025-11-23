@@ -6,6 +6,8 @@
 
 int ft_printf(const char *input, ...);
 int ft_putchar(char c);
-int	format(char c, int vargs);
+int	format(char c, va_list vargs);
+int	ft_putstr(char *c);
+
 
 #endif
