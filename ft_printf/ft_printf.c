@@ -6,7 +6,7 @@
 /*   By: carltruj <carltruj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/23 18:11:21 by carltruj          #+#    #+#             */
-/*   Updated: 2025/11/23 19:15:57 by carltruj         ###   ########.fr       */
+/*   Updated: 2025/11/23 19:27:23 by carltruj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,12 @@ int	format(char c, va_list vargs)
 		return (ft_putchar(va_arg(vargs, int)));
 	if (c == 's')
 		return (ft_putstr(va_arg(vargs, char *)));
+	if (c == 'd' || c == 'i')
+		return (ft_putnbr(va_arg(vargs, int)));
+
+		
+	if (c == '%')
+		return (ft_putchar('%'));
 	return (0);
 }
 
