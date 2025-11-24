@@ -9,6 +9,7 @@ int ft_putchar(char c);
 int	format(char c, va_list vargs);
 int	ft_putstr(char *c);
 int	ft_putnbr(long n);
-
+int	ft_puthex(unsigned int n, int up);
+int	ft_putptr(void *p);
 
 #endif
