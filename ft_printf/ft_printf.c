@@ -6,7 +6,7 @@
 /*   By: carltruj <carltruj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/23 18:11:21 by carltruj          #+#    #+#             */
-/*   Updated: 2025/11/24 17:11:37 by carltruj         ###   ########.fr       */
+/*   Updated: 2025/11/24 17:34:29 by carltruj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,24 +33,23 @@ int	format(char c, va_list vargs)
 	return (0);
 }
 
-int ft_printf(const char *input, ...)
+int	ft_printf(const char *input, ...)
 {
-	va_list vargs;
-	va_start(vargs, input);
-	int i;
+	va_list	vargs;
+	int		i;
 
+	va_start(vargs, input);
 	i = 0;
-	while(*input)
+	while (*input)
 	{
-		
-			if(*input == '%')
-			{
-				input++;
-				i += format(*input, vargs);
-			}
-			else
-				i += ft_putchar(*input);
+		if (*input == '%')
+		{
 			input++;
+			i += format(*input, vargs);
+		}
+		else
+			i += ft_putchar(*input);
+		input++;
 	}
 	va_end(vargs);
 	return (i);
