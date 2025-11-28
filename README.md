@@ -6,3 +6,4 @@ all the files are upload in the directory libft and including the make file that
 
 all mandatory funtions are done for the ft_printf and it work perfecly with all the tests like francinette strict, and all molinettes rules are followed.
 
+all mandatory parts on the proyect get_next_line but an error on the francinette stric with a NULL.
