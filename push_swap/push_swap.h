@@ -5,48 +5,45 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: carltruj <carltruj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/30 16:56:36 by carltruj          #+#    #+#             */
-/*   Updated: 2025/11/30 18:44:37 by carltruj         ###   ########.fr       */
+/*   Created: 2025/12/02 18:42:40 by carltruj          #+#    #+#             */
+/*   Updated: 2025/12/02 18:47:28 by carltruj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include <stdarg.h>
 # include <unistd.h>
 # include <stdlib.h>
+# include <limits.h>
 
-typedef struct s_node {
-    int value;	// interger number.
-    int index;
-	int size;	// index to manipulate the interger.
-    struct s_node *next;	// Ponter of the next node of stack.
-    struct s_node *prev;  
-} t_node;
+typedef struct s_stack
+{
+	int				value;
+	int				index;
+	struct s_stack	*next;
+}	t_stack;
 
-typedef struct t_stack {
-	t_node *top;
-} t_stack;
+/* utils.c */
+void	ft_error(void);
+long	ft_atoi(const char *str);
+t_stack	*ft_lstnew(int value);
+t_stack	*ft_lstlast(t_stack *lst);
+void	ft_lstadd_back(t_stack **lst, t_stack *new);
 
-// funtions used for printf.
-int	ft_printf(const char *input, ...);
-int	ft_putchar(char c);
-int	format(char c, va_list vargs);
-int	ft_putstr(char *c);
-int	ft_putnbr(long n);
-int	ft_puthex(unsigned long long n, int up);
-int	ft_putptr(void *p);
+/* ops.c */
+void	op_s(t_stack **stack, char *str);
+void	op_p(t_stack **src, t_stack **dst, char *str);
+void	op_r(t_stack **stack, char *str);
+void	op_rr(t_stack **stack, char *str);
+int		ft_lstsize(t_stack *lst);
 
-//funtions only for the format of the input.
-char	**ft_split(char const *str, char c);
-int		ft_atoi(const char *nptr);
-t_node	*format_argv_char(char *str, t_stack *a);
-t_node	*normal_input(char **str, t_stack *a, int i);
-int		is_digit(int c);
+/* sort.c */
+void	simple_sort(t_stack **a, t_stack **b);
+void	radix_butterfly(t_stack **a, t_stack **b, int size);
 
-//funtions of push.
-t_node *ft_new_node(int value);
-void ft_add_top(t_stack *stack, t_node *new_node);
+/* main.c (helper) */
+void	index_stack(t_stack **stack);
+void	free_stack(t_stack **stack);
 
 #endif
