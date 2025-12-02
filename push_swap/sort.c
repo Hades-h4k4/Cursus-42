@@ -6,7 +6,7 @@
 /*   By: carltruj <carltruj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 18:44:28 by carltruj          #+#    #+#             */
-/*   Updated: 2025/12/02 18:44:31 by carltruj         ###   ########.fr       */
+/*   Updated: 2025/12/02 19:06:24 by carltruj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,10 @@ void	simple_sort(t_stack **a, t_stack **b)
 		op_s(a, "sa\n");
 	else if (size == 3)
 	{
-		if ((*a)->value > (*a)->next->value && (*a)->value > ft_lstlast(*a)->value)
+		if ((*a)->value > (*a)->next->value
+			&& (*a)->value > ft_lstlast(*a)->value)
 			op_r(a, "ra\n");
-		if ((*a)->next->value > (*a)->value 
+		if ((*a)->next->value > (*a)->value
 			&& (*a)->next->value > ft_lstlast(*a)->value)
 			op_rr(a, "rra\n");
 		if ((*a)->value > (*a)->next->value)
