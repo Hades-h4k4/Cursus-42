@@ -6,7 +6,7 @@
 /*   By: carltruj <carltruj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 18:44:28 by carltruj          #+#    #+#             */
-/*   Updated: 2025/12/02 19:06:24 by carltruj         ###   ########.fr       */
+/*   Updated: 2026/02/25 12:43:37 by carltruj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,17 @@ void	simple_sort(t_stack **a, t_stack **b)
 
 	size = ft_lstsize(*a);
 	if (size == 2 && (*a)->value > (*a)->next->value)
-		op_s(a, "sa\n");
+		ft_sa(a, "sa\n");
 	else if (size == 3)
 	{
 		if ((*a)->value > (*a)->next->value
 			&& (*a)->value > ft_lstlast(*a)->value)
-			op_r(a, "ra\n");
+			ft_rb(a, "ra\n");
 		if ((*a)->next->value > (*a)->value
 			&& (*a)->next->value > ft_lstlast(*a)->value)
-			op_rr(a, "rra\n");
+			ft_rr(a, "rra\n");
 		if ((*a)->value > (*a)->next->value)
-			op_s(a, "sa\n");
+			ft_sa(a, "sa\n");
 	}
 	(void)b;
 }
@@ -61,17 +61,17 @@ static void	push_to_b(t_stack **a, t_stack **b, int size)
 	{
 		if ((*a)->index <= i)
 		{
-			op_p(a, b, "pb\n");
-			op_r(b, "rb\n");
+			ft_pb(a, b, "pb\n");
+			ft_rb(b, "rb\n");
 			i++;
 		}
 		else if ((*a)->index <= i + range)
 		{
-			op_p(a, b, "pb\n");
+			ft_pb(a, b, "pb\n");
 			i++;
 		}
 		else
-			op_r(a, "ra\n");
+			ft_rb(a, "ra\n");
 	}
 }
 
@@ -88,14 +88,14 @@ void	radix_butterfly(t_stack **a, t_stack **b, int size)
 		if (pos <= ft_lstsize(*b) / 2)
 		{
 			while ((*b)->index != curr_max)
-				op_r(b, "rb\n");
+				ft_rb(b, "rb\n");
 		}
 		else
 		{
 			while ((*b)->index != curr_max)
-				op_rr(b, "rrb\n");
+				ft_rr(b, "rrb\n");
 		}
-		op_p(b, a, "pa\n");
+		ft_pb(b, a, "pa\n");
 		curr_max--;
 	}
 }

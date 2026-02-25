@@ -6,7 +6,7 @@
 /*   By: carltruj <carltruj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 18:44:01 by carltruj          #+#    #+#             */
-/*   Updated: 2025/12/02 18:44:03 by carltruj         ###   ########.fr       */
+/*   Updated: 2026/02/25 12:43:37 by carltruj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	ft_lstsize(t_stack *lst)
 	return (i);
 }
 
-void	op_s(t_stack **stack, char *str)
+void	ft_sa(t_stack **stack, char *str)
 {
 	t_stack	*tmp;
 
@@ -39,7 +39,7 @@ void	op_s(t_stack **stack, char *str)
 		write(1, str, 3);
 }
 
-void	op_p(t_stack **src, t_stack **dst, char *str)
+void	ft_pb(t_stack **src, t_stack **dst, char *str)
 {
 	t_stack	*tmp;
 
@@ -53,7 +53,7 @@ void	op_p(t_stack **src, t_stack **dst, char *str)
 		write(1, str, 3);
 }
 
-void	op_r(t_stack **stack, char *str)
+void	ft_rb(t_stack **stack, char *str)
 {
 	t_stack	*tmp;
 	t_stack	*last;
@@ -69,7 +69,7 @@ void	op_r(t_stack **stack, char *str)
 		write(1, str, 3);
 }
 
-void	op_rr(t_stack **stack, char *str)
+void	ft_rr(t_stack **stack, char *str)
 {
 	t_stack	*last;
 	t_stack	*prev;
