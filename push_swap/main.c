@@ -6,13 +6,11 @@
 /*   By: carltruj <carltruj@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/02 18:44:59 by carltruj          #+#    #+#             */
-/*   Updated: 2026/02/25 13:23:32 by carltruj         ###   ########.fr       */
+/*   Updated: 2026/02/25 13:47:25 by carltruj         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-
 
 int main(int argc, char **argv)
 {
